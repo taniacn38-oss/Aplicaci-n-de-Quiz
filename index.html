@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz de Maquillaje - ADSO</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="contenedor-quiz" aria-labelledby="titulo-quiz">
+      <!-- Pantalla inicial con detalles y botón para comenzar -->
+      <section id="pantalla-inicio" class="pantalla activa">
+        <span class="insignia-pastel">Belleza y Estilo · Quiz</span>
+        <h1 id="titulo-quiz">Quiz de Maquillaje</h1>
+        <p class="descripcion-quiz">
+          Pon a prueba tus conocimientos sobre preparación de piel, brochas,
+          subtonos y técnicas de maquillaje. Recibirás retroalimentación
+          inmediata en cada tarjeta y tendrás
+          <strong>1 minuto (60 s)</strong> por pregunta; si el tiempo se agota,
+          pasará a la siguiente y se restará 1 punto.
+        </p>
+        <ul class="detalles-quiz">
+          <li><strong>Preguntas:</strong> 5 preguntas de maquillaje</li>
+          <li>
+            <strong>Puntuación:</strong> +1 punto por acierto · -1 punto si se
+            acaba el tiempo
+          </li>
+          <li><strong>Tiempo por pregunta:</strong> 60 segundos</li>
+        </ul>
+        <button type="button" id="boton-iniciar" class="boton-principal">
+          Comenzar quiz
+        </button>
+      </section>
+
+      <!-- Pantalla activa con la tarjeta de pregunta -->
+      <section id="pantalla-pregunta" class="pantalla" aria-live="polite">
+        <div class="barra-progreso">
+          <span id="indicador-pregunta" class="indicador-texto"
+            >Pregunta 1 de 5</span
+          >
+          <span id="temporizador-pregunta" class="temporizador-badge"
+            >Tiempo: 60s</span
+          >
+          <span id="puntaje-actual" class="puntaje-badge">Puntos: 0</span>
+        </div>
+
+        <article class="tarjeta-pregunta">
+          <h2 id="texto-pregunta" class="texto-pregunta"></h2>
+          <div
+            id="contenedor-opciones"
+            class="contenedor-opciones"
+            role="group"
+            aria-label="Opciones de respuesta"
+          ></div>
+          <p id="retroalimentacion" class="retroalimentacion"></p>
+        </article>
+
+        <div class="pie-tarjeta">
+          <button
+            type="button"
+            id="boton-siguiente"
+            class="boton-secundario"
+            disabled
+          >
+            Siguiente pregunta
+          </button>
+        </div>
+      </section>
+
+      <!-- Pantalla final con puntaje y resumen de todas las respuestas -->
+      <section id="pantalla-resultados" class="pantalla" aria-live="polite">
+        <span class="insignia-pastel">Resultado final</span>
+        <h2>¡Quiz de maquillaje terminado!</h2>
+        <p id="resumen-puntaje" class="resumen-puntaje"></p>
+
+        <div id="lista-resumen" class="lista-resumen"></div>
+
+        <button type="button" id="boton-reiniciar" class="boton-principal">
+          Intentar de nuevo
+        </button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
